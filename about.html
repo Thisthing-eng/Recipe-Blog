@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Protein Recipe Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+            min-height: 100vh;
+        }
+        
+        .font-arial-black {
+            font-family: "Arial Black", Gadget, Arial, sans-serif;
+        }
+        
+        .header-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #ed8936;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mission-card {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            background: linear-gradient(135deg, #ed8936, #dd7724);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ed8936, #dd7724);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white header-shadow p-5 sticky top-0 z-10">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800 flex items-center">
+                <i class="fas fa-utensils text-orange-500 mr-2"></i> Protein Recipe Hub
+            </a>
+            
+            <ul class="flex space-x-8 font-semibold">
+                <li>
+                    <a href="recipes.html" class="nav-link text-orange-500">RECIPES</a>
+                </li>
+                <li>
+                    <a href="staples.html" class="nav-link text-gray-600 hover:text-orange-500 transition duration-300">INGREDIENTS</a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-orange-500 transition duration-300">ABOUT</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area for the About page -->
+    <main class="container mx-auto px-4 py-10">
+        <!-- Hero Section -->
+        <section class="text-center mb-16 animate-fade-in">
+            <h1 class="text-5xl font-bold text-gray-800 my-8">Our Story</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Making high-protein eating simple, delicious, and accessible for everyone
+            </p>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="max-w-6xl mx-auto bg-white p-10 rounded-xl shadow-lg mb-16 mission-card animate-fade-in">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-2/3 mb-8 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Mission</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                      Have you ever found yourself following a diet or simply just eating a meal, and then realizing there was an insufficient amount of protien in that dish?  If you are an athlete or a regular gym-goer, you know how hard it is to get your daily protein intake. Here at Protein Recipe Hub, we strive to make adequate protein consumption easy for everyone. 
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        We believe that a high-protein diet shouldn't be complicated or boring. Furthermore, it shouldn't be the factor that limits your athletic performance. At Protein Recipe Hub, we believe that delicious high protein dishes can be made with regular ingredients. Whether you're an athlete, avid lifter, or just looking to consume more protein, Protein Recipe Hub's got your back. We focus on using common ingredients to create simple meals that are packed with flavor and essential nutrients.
+                    </p>
+                </div>
+                <div class="md:w-1/3">
+                    <div class="bg-orange-100 rounded-xl p-6 h-full flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-orange-500 text-6xl"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto">
+            <div class="bg-white p-8 rounded-xl text-center shadow-md animate-fade-in">
+                <div class="stats-number">200+</div>
+                <h3 class="text-xl font-semibold text-gray-800 mt-2">Protein Recipes</h3>
+                <p class="text-gray-600">Delicious meals to fuel your body</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl text-center shadow-md animate-fade-in">
+                <div class="stats-number">9</div>
+                <h3 class="text-xl font-semibold text-gray-800 mt-2">Protein Staples</h3>
+                <p class="text-gray-600">Essential ingredients to always have</p>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl text-center shadow-md mission-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Health First</h3>
+                    <p class="text-gray-600">We prioritize nutrition without compromising on taste or enjoyment.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center shadow-md mission-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Simplicity</h3>
+                    <p class="text-gray-600">We believe healthy eating should be accessible and straightforward.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center shadow-md mission-card">
+                    <div class="value-icon">
+                        <i class="fas fa-utensils text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Real Ingredients</h3>
+                    <p class="text-gray-600">We focus on recipes made with regular, whole food ingredients.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer Section -->
+        <section class="max-w-4xl mx-auto bg-white p-10 rounded-xl shadow-lg mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">What We Offer</h2>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-orange-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-list-ol text-orange-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Easy-to-Follow Recipes</h3>
+                        <p class="text-gray-700">Step-by-step instructions for every skill level with clear directions and tips for success.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-orange-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-shopping-basket text-orange-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Ingredient Staples</h3>
+                        <p class="text-gray-700">Guides on the best protein sources and pantry essentials to always have on hand.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-orange-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-chart-pie text-orange-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Nutritional Information</h3>
+                        <p class="text-gray-700">Detailed macros and nutrition facts to help you track your intake and meet your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white p-8">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-xl font-bold flex items-center">
+                        <i class="fas fa-utensils text-orange-500 mr-2"></i> Protein Recipe Hub
+                    </p>
+                    <p class="text-gray-400 mt-2">Delicious high-protein recipes for everyone</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-pinterest-p text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Protein Recipe Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
