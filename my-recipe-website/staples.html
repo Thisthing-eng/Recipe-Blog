@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Protein Staples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+            min-height: 100vh;
+        }
+
+        .header-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #ed8936;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .card-image {
+            height: 220px;
+            transition: transform 0.5s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+        
+        .protein-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(237, 137, 54, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            backdrop-filter: blur(4px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #ed8936, #dd7724);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #dd7724, #c0651f);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+        }
+        
+        .footer {
+            background: linear-gradient(to right, #2d3748, #1a202c);
+        }
+        
+        .page-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ed8936;
+            border-radius: 2px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .stagger-animation > * {
+            opacity: 0;
+        }
+        
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+        .stagger-animation > *:nth-child(7) { animation-delay: 0.7s; }
+        .stagger-animation > *:nth-child(8) { animation-delay: 0.8s; }
+        .stagger-animation > *:nth-child(9) { animation-delay: 0.9s; }
+        .stagger-animation > *:nth-child(10) { animation-delay: 1.0s; }
+        .stagger-animation > *:nth-child(11) { animation-delay: 1.1s; }
+        .stagger-animation > *:nth-child(12) { animation-delay: 1.2s; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+ <!-- Navigation Bar -->
+    <header class="bg-white header-shadow p-5 sticky top-0 z-10">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800 flex items-center">
+                <i class="fas fa-utensils text-orange-500 mr-2"></i> Protein Recipe Hub
+            </a>
+            
+            <ul class="flex space-x-8 font-semibold">
+                <li>
+                    <a href="recipes.html" class="nav-link text-orange-500">RECIPES</a>
+                </li>
+                <li>
+                    <a href="staples.html" class="nav-link text-gray-600 hover:text-orange-500 transition duration-300">INGREDIENTS</a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-orange-500 transition duration-300">ABOUT</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area for Staples -->
+    <main class="container mx-auto px-4 py-10">
+        <div class="text-center mb-12 animate-fade-in">
+            <h1 class="text-5xl font-bold text-gray-800 my-8 page-title">High-Protein Staples</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Stock your pantry with these essential high-protein staples to make meal prep a breeze.
+            </p>
+        </div>
+
+        <!-- Container for staple cards -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation" id="staples-container">
+            <!-- Each card will have a data-search attribute for the link -->
+            
+            <!-- Cottage Cheese Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                <!--    <div class="w-full card-image" style="background-image: url('file:///C:/Users/thist/OneDrive/Recipe%20Blog%20project/images/Staples/Cottage%20Cheese-staples.jpg')" alt = "A bowl of cottage cheese"></div>    -->
+
+               <div class="w-full card-image" style="background-image: url('../images/Staples/Cottage-Cheese-staples.jpg')" alt = "A bowl of cottage cheese"></div>   
+
+                    <div class="protein-badge">11g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-cheese text-orange-500 mr-2"></i> Cottage Cheese
+                    </h2>
+                    <p class="text-gray-600 mb-4">A versatile, low-fat dairy staple with a mild flavor, perfect for both savory and sweet dishes.</p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="cottage cheese">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lentils Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/lentils-staples.png')" alt = "A pile of lentils"></div>
+                    <div class="protein-badge">9g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-seedling text-orange-500 mr-2"></i> Lentils
+                    </h2>
+                    <p class="text-gray-600 mb-4">A plant-based powerhouse, lentils are cheap, filling, and packed with fiber and protein.</p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="lentils">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Protein Powder Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../../images/Staples/Protein-powder-staples.jpg')" alt = "a bottle of protein powder"></div>
+                    <div class="protein-badge">80g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-blender text-orange-500 mr-2"></i> Protein Powder
+                    </h2>
+                    <p class="text-gray-600 mb-4">The ultimate supplement for an easy protein boost in shakes, smoothies, and baked goods.</p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="protein powder">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tofu Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Tofu-staples.jpg')" alt = "A pile of tofu"></div>
+                    <div class="protein-badge">8g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-cubes text-orange-500 mr-2"></i> Tofu
+                    </h2>
+                    <p class="text-gray-600 mb-4">A plant-based protein source that easily absorbs flavors, making it a chameleon for any dish.</p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="tofu">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Greek Yogurt Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/GreekYogurt-Staple.jpg')" alt = "A bowl of greek yogurt"></div>
+                    <div class="protein-badge">10g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-cheese text-orange-500 mr-2"></i> Greek Yogurt
+                    </h2>
+                    <p class="text-gray-600 mb-4">Creamy, tangy, and loaded with protein. A great alternative to sour cream and a base for sauces and snacks.</p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="greek yogurt">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Eggs Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Eggs-staples.jpg')" alt = "a carton of eggs"></div>
+                    <div class="protein-badge">13g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-egg text-orange-500 mr-2"></i> Eggs
+                    </h2>
+                    <p class="text-gray-600 mb-4">One of the most affordable and complete protein sources. Perfect for any meal of the day.</p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="egg ">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Lean Ground Beef Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Beef-staple.jpg')" a;t = "A pile of beef"></div>
+                    <div class="protein-badge">26g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-hamburger text-orange-500 mr-2"></i> Lean Ground Beef
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        An affordable and high-quality protein source, perfect for a variety of dishes like burgers, tacos, and meatballs.
+                    </p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="beef">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Turkey Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Turkey-staples.jpg" alt = "A raw, entire turkey"></div>
+                    <div class="protein-badge">29g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-drumstick-bite text-orange-500 mr-2"></i> Turkey
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Lean and versatile, turkey is an excellent source of high-quality protein that works well in various dishes.
+                    </p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="turkey">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Almonds Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Almonds-staples.jpg')" alt = "A pile of almonds"></div>
+                    <div class="protein-badge">21g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-acorn text-orange-500 mr-2"></i> Almonds
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        A nutrient-dense nut providing protein, healthy fats, and fiber. Great for snacking or adding to dishes.
+                    </p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="almond">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Salmon Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Salmon-Staples.jpg')" alt = "A filet of salmon"></div>
+                    <div class="protein-badge">20g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-fish text-orange-500 mr-2"></i> Salmon
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Rich in omega-3 fatty acids and protein, salmon is a delicious and healthy choice for any meal.
+                    </p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="salmon">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Beans Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Beans-staples.jpg')" alt = "a pile of dried kidney beans"></div>
+                    <div class="protein-badge">9g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-leaf text-orange-500 mr-2"></i> Beans
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        A versatile and affordable plant-based staple, beans are packed with protein and fiber, perfect for soups, stews, and salads.
+                    </p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="beans">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Oats Card -->
+            <div class="card bg-white animate-fade-in">
+                <div class="relative overflow-hidden">
+                    <div class="w-full card-image" style="background-image: url('../images/Staples/Oats-staples.jpg')" alt = "a pile of oats"></div>
+                    <div class="protein-badge">17g protein / 100g</div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-seedling text-orange-500 mr-2"></i> Oats
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        A breakfast favorite, oats are a slow-digesting carb source with a good amount of protein and soluble fiber.
+                    </p>
+                    <button class="btn-primary text-white px-5 py-2.5 rounded-full inline-flex items-center w-full justify-center" data-search="oat">
+                        Explore Recipes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer text-white p-8 mt-16">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-xl font-bold flex items-center">
+                        <i class="fas fa-utensils text-orange-500 mr-2"></i> Protein Recipe Hub
+                    </p>
+                    <p class="text-gray-400 mt-2">Delicious high-protein recipes for everyone</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-pinterest-p text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Protein Recipe Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchButtons = document.querySelectorAll('.card button[data-search]');
+
+            searchButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const searchTerm = this.getAttribute('data-search');
+                    // Use URL parameters to pass the search term to the recipes page
+                    window.location.href = `recipes.html?search=${encodeURIComponent(searchTerm)}`;
+                });
+            });
+
+            // Add animation to cards
+            const cards = document.querySelectorAll('.stagger-animation > *');
+            cards.forEach(card => {
+                card.classList.add('animate-fade-in');
+            });
+        });
+    </script>
+</body>
+</html>
